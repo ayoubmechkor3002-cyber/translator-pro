@@ -1,0 +1,525 @@
+/* ========================================
+   TRANSLATOR PRO - CSS COMPLET
+   ======================================== */
+
+/* ===== VARIABLES CSS ===== */
+:root {
+    --primary-color: #140c2d;
+    --primary-hover: #144116;
+    --secondary-color: #2196F3;
+    --accent-color: #FF9800;
+    --error-color: #fa1605;
+    --success-color: #24253e;
+    --warning-color: #573400;
+    --info-color: #0c8bf3;
+    
+    --bg-light: #8cf2f8;
+    --bg-white: #ffffff;
+    --bg-card: #4e2803;
+    --text-primary: #2c3e50;
+    --text-secondary: #7f8c8d;
+    --border-color: #e0e0e0;
+    
+    --shadow-sm: 0 2px 4px rgba(0,0,0,0.08);
+    --shadow-md: 0 4px 8px rgba(0,0,0,0.12);
+    --shadow-lg: 0 8px 16px rgba(0,0,0,0.15);
+    
+    --radius-sm: 6px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    
+    --transition: all 0.3s ease;
+}
+
+/* ===== RESET ET BASE ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', 'Open Sans', 'Segoe UI', sans-serif;
+    color: var(--text-primary);
+    background: linear-gradient(135deg, #000209 0%, #00142c 100%);
+    background-attachment: fixed;
+    line-height: 1.6;
+}
+
+/* ===== CONTENEUR PRINCIPAL ===== */
+.main {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.stApp {
+    background: transparent;
+}
+
+/* ===== HEADER ===== */
+.header-container {
+    text-align: center;
+    padding: 40px 20px;
+    background: var(--bg-white);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    margin-bottom: 30px;
+    animation: fadeInDown 0.6s ease;
+}
+
+.header-image {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    display: block;
+    margin: 0 auto 20px auto;
+    object-fit: contain;
+    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));
+    transition: transform 0.3s ease;
+}
+
+.header-image:hover {
+    transform: scale(1.05);
+}
+
+.app-title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.app-subtitle {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    font-weight: 300;
+    margin-bottom: 20px;
+}
+
+.app-description {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.8;
+}
+
+/* ===== TABS / ONGLETS ===== */
+.stTabs {
+    background: var(--bg-white);
+    border-radius: var(--radius-lg);
+    padding: 20px;
+    box-shadow: var(--shadow-md);
+    margin-bottom: 20px;
+}
+
+.stTabs [data-baseweb="tab-list"] {
+    gap: 10px;
+    background: var(--bg-light);
+    padding: 10px;
+    border-radius: var(--radius-md);
+}
+
+.stTabs [data-baseweb="tab"] {
+    height: 50px;
+    padding: 0 24px;
+    background-color: transparent;
+    border-radius: var(--radius-sm);
+    color: var(--text-secondary);
+    font-weight: 500;
+    font-size: 1rem;
+    transition: var(--transition);
+    border: 2px solid transparent;
+}
+
+.stTabs [data-baseweb="tab"]:hover {
+    background-color: rgba(76, 175, 80, 0.1);
+    color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+.stTabs [aria-selected="true"] {
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-hover)) !important;
+    color: rgb(255, 255, 255) !important;
+    box-shadow: var(--shadow-sm);
+    border: 2px solid var(--primary-color);
+}
+
+/* ===== BOUTONS ===== */
+.stButton > button {
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-hover));
+    color: white;
+    padding: 12px 32px;
+    border: none;
+    border-radius: var(--radius-md);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    box-shadow: var(--shadow-sm);
+    width: 100%;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.stButton > button:hover {
+    background: linear-gradient(135deg, var(--primary-hover), #3d8b40);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+}
+
+.stButton > button:active {
+    transform: translateY(0);
+    box-shadow: var(--shadow-sm);
+}
+
+.stDownloadButton > button {
+    background: linear-gradient(135deg, var(--secondary-color), #1976D2);
+    color: white;
+    padding: 12px 32px;
+    border: none;
+    border-radius: var(--radius-md);
+    font-weight: 600;
+    transition: var(--transition);
+    width: 100%;
+}
+
+.stDownloadButton > button:hover {
+    background: linear-gradient(135deg, #1976D2, #1565C0);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+/* ===== CHAMPS DE SAISIE ===== */
+.stTextInput > div > div > input,
+.stTextArea > div > div > textarea {
+    border: 2px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 12px 16px;
+    font-size: 1rem;
+    transition: var(--transition);
+    background: var(--bg-white);
+}
+
+.stTextInput > div > div > input:focus,
+.stTextArea > div > div > textarea:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.1);
+    outline: none;
+}
+
+.stTextArea > div > div > textarea {
+    min-height: 150px;
+    font-family: 'Roboto Mono', monospace;
+    line-height: 1.6;
+}
+
+/* ===== SELECTBOX ===== */
+.stSelectbox > div > div {
+    border: 2px solid var(--border-color);
+    border-radius: var(--radius-md);
+    transition: var(--transition);
+    background: var(--bg-white);
+}
+
+.stSelectbox > div > div:hover {
+    border-color: var(--primary-color);
+}
+
+/* ===== FILE UPLOADER ===== */
+.stFileUploader {
+    border: 2px dashed var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 30px;
+    text-align: center;
+    background: var(--bg-light);
+    transition: var(--transition);
+}
+
+.stFileUploader:hover {
+    border-color: var(--primary-color);
+    background: rgba(76, 175, 80, 0.05);
+}
+
+.stFileUploader > div > button {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: var(--radius-sm);
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.stFileUploader > div > button:hover {
+    background: var(--primary-hover);
+    transform: scale(1.05);
+}
+
+/* ===== CARTES / CARDS ===== */
+.translation-card {
+    background: var(--bg-white);
+    border-radius: var(--radius-md);
+    padding: 20px;
+    box-shadow: var(--shadow-sm);
+    margin-bottom: 20px;
+    transition: var(--transition);
+    border-left: 4px solid var(--primary-color);
+}
+
+.translation-card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+}
+
+.result-box {
+    background: var(--bg-light);
+    border-radius: var(--radius-md);
+    padding: 20px;
+    border: 2px solid var(--border-color);
+    min-height: 150px;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.8;
+    color: var(--text-primary);
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+/* ===== ALERTES / NOTIFICATIONS ===== */
+.stAlert {
+    border-radius: var(--radius-md);
+    padding: 16px 20px;
+    margin: 15px 0;
+    font-weight: 500;
+    animation: slideInRight 0.4s ease;
+}
+
+.stSuccess {
+    background-color: rgba(76, 175, 80, 0.1);
+    border-left: 4px solid var(--success-color);
+    color: var(--success-color);
+}
+
+.stError {
+    background-color: rgba(244, 67, 54, 0.1);
+    border-left: 4px solid var(--error-color);
+    color: var(--error-color);
+}
+
+.stWarning {
+    background-color: rgba(255, 152, 0, 0.1);
+    border-left: 4px solid var(--warning-color);
+    color: var(--warning-color);
+}
+
+.stInfo {
+    background-color: rgba(33, 150, 243, 0.1);
+    border-left: 4px solid var(--info-color);
+    color: var(--info-color);
+}
+
+/* ===== SPINNER / LOADER ===== */
+.stSpinner > div {
+    border-color: var(--primary-color) transparent transparent transparent;
+}
+
+/* ===== COLONNES ===== */
+.row-widget.stHorizontal {
+    gap: 20px;
+}
+
+/* ===== EXPANDER ===== */
+.streamlit-expanderHeader {
+    background: var(--bg-light);
+    border-radius: var(--radius-md);
+    padding: 12px 16px;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.streamlit-expanderHeader:hover {
+    background: rgba(76, 175, 80, 0.1);
+}
+
+/* ===== FOOTER ===== */
+.footer {
+    text-align: center;
+    padding: 30px 20px;
+    background: var(--bg-white);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    margin-top: 40px;
+    color: var(--text-secondary);
+}
+
+.footer a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.footer a:hover {
+    color: var(--primary-hover);
+    text-decoration: underline;
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+.pulse-animation {
+    animation: pulse 2s infinite;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 768px) {
+    .app-title {
+        font-size: 2rem;
+    }
+    
+    .app-subtitle {
+        font-size: 1rem;
+    }
+    
+    .header-image {
+        max-width: 250px;
+    }
+    
+    .stTabs [data-baseweb="tab"] {
+        padding: 0 12px;
+        font-size: 0.9rem;
+    }
+    
+    .stButton > button {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+    
+    .header-container {
+        padding: 30px 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .app-title {
+        font-size: 1.5rem;
+    }
+    
+    .header-image {
+        max-width: 200px;
+    }
+    
+    .stTabs [data-baseweb="tab-list"] {
+        flex-direction: column;
+    }
+    
+    .result-box {
+        padding: 15px;
+        font-size: 0.9rem;
+    }
+}
+
+/* ===== SCROLLBAR PERSONNALISÉE ===== */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-light);
+    border-radius: var(--radius-sm);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: var(--radius-sm);
+    transition: var(--transition);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-hover);
+}
+
+/* ===== BADGES ===== */
+.badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin: 4px;
+}
+
+.badge-success {
+    background: rgba(76, 175, 80, 0.2);
+    color: var(--success-color);
+}
+
+.badge-info {
+    background: rgba(33, 150, 243, 0.2);
+    color: var(--info-color);
+}
+
+/* ===== TOOLTIPS ===== */
+[data-tooltip] {
+    position: relative;
+    cursor: help;
+}
+
+[data-tooltip]:hover::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 8px 12px;
+    background: rgba(0, 0, 0, 0.9);
+    color: white;
+    border-radius: var(--radius-sm);
+    font-size: 0.85rem;
+    white-space: nowrap;
+    z-index: 1000;
+    animation: fadeInDown 0.3s ease;
+}
+
+/* ===== PROGRESS BAR ===== */
+.stProgress > div > div > div {
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    border-radius: var(--radius-sm);
+}
