@@ -159,14 +159,22 @@ with tab2:
         
         with col1:
             st.markdown("#### 🖼️ Image Uploadée")
-            image = Image.open(uploaded_image)
-            st.image(image, use_container_width=True)
+            try:
+                image = Image.open(uploaded_image)
+                # استخدام use_column_width للتوافق مع جميع الإصدارات
+                try:
+                    st.image(image, use_container_width=True)
+                except TypeError:
+                    st.image(image, use_column_width=True)
+            except Exception as e:
+                st.error(f"❌ Erreur lors du chargement de l'image: {str(e)}")
+                image = None
         
         with col2:
             st.markdown("#### 📤 Texte Traduit")
             result_placeholder = st.empty()
         
-        if st.button("🔍 Extraire et Traduire", use_container_width=True):
+        if image and st.button("🔍 Extraire et Traduire", use_container_width=True):
             if source_lang == target_lang:
                 st.warning("⚠️ Les langues source et cible doivent être différentes")
             else:
@@ -184,7 +192,8 @@ with tab2:
                     st.success("✅ Image traduite avec succès!")
                 except Exception as e:
                     st.error(f"❌ Erreur: {str(e)}")
-
+                    logger.error(f"Erreur détaillée: {str(e)}")
+        
 # ========== ONGLET FICHIER ==========
 with tab3:
     st.markdown("### 📄 Traduction de Fichiers")
