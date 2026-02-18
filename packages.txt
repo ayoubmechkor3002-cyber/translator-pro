@@ -1,0 +1,8 @@
+tesseract-ocr
+tesseract-ocr-ara
+tesseract-ocr-fra
+tesseract-ocr-eng
+tesseract-ocr-spa
+tesseract-ocr-deu
+tesseract-ocr-ita
+ffmpeg
